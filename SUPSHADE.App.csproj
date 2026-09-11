@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>SUPSHADE</AssemblyName>
+    <RootNamespace>SUPSHADE.App</RootNamespace>
+    <ApplicationIcon>Assets\supshade.ico</ApplicationIcon>
+    <Version>1.0.0</Version>
+    <Company>SUPs Studios</Company>
+    <Product>SUPSHADE</Product>
+    <Authors>SUPs Studios</Authors>
+    <Copyright>Copyright (c) SUPs Studios</Copyright>
+    <!-- Publish as a single self-contained exe:
+         dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\supshade.ico" />
+    <Resource Include="Assets\supshade_banner.png" />
+    <Resource Include="Assets\supshade_icon_1024_source.png" />
+  </ItemGroup>
+
+</Project>

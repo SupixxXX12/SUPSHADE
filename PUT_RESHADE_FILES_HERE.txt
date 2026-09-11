@@ -1,0 +1,30 @@
+This folder is what SUPSHADE copies into a game's install folder when the user
+clicks "Install Shade-nexgen". Populate it with a real, official ReShade
+distribution (download from https://reshade.me) before you publish SUPSHADE:
+
+  Assets/ReShade/
+    dxgi.dll                 <- the official ReShade proxy DLL, renamed to
+                                 match the game's render API (dxgi.dll for
+                                 DX10/11/12 games, d3d9.dll for older DX9
+                                 titles, opengl32.dll for OpenGL, etc.)
+    ReShade.ini               <- default SUPSHADE configuration
+                                 (set the overlay key to Home here:
+                                 [INPUT] KeyOverlay=36,0,0,0)
+    ReShadePreset.ini          <- your default "Shade-nexgen" starter preset
+    Shaders\                  <- .fx shader files (ReShade-FX / ReShade shaders
+                                 you have the right to redistribute, e.g. the
+                                 open "reshade-shaders" repo shaders, or your
+                                 own original shaders)
+    Textures\                 <- any textures the shaders reference
+
+ReShadeInstallerService copies this entire folder tree into the selected
+game's directory, keeps a manifest of exactly what it copied (and backs up
+anything it overwrote), and reverses all of it on Uninstall.
+
+Rebrand the in-game overlay's window title / accent color via ReShade.ini's
+[STYLE] section (ReShade supports custom overlay styling) so it reads
+"Shade-nexgen" and matches SUPSHADE's purple/cyan look.
+
+Do not skip checking the license of any shader pack you bundle - most
+reshade-shaders repositories are MIT/BSD but always verify before
+redistributing.
